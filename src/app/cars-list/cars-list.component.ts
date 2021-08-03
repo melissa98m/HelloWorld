@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cars-list.component.css']
 })
 export class CarsListComponent implements OnInit {
-
-  constructor() { }
+   enfantUn:string = "FORD";
+   enfantDeux:string = "fiat";
+   enfantTrois:string = "nissan";
+     constructor() { }
 
   ngOnInit(): void {
   }

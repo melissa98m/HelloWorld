@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-car-item',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./car-item.component.css']
 })
 export class CarItemComponent implements OnInit {
+ 
+
+ @Input() enfant:any;
 
   constructor() { }
 
@@ -13,3 +16,5 @@ export class CarItemComponent implements OnInit {
   }
 
 }
+
+

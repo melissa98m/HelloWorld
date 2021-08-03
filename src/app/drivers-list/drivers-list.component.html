@@ -1,3 +1,15 @@
 <h1 class="my-5">
     Nos pilotes
 </h1>
+
+<h1>Event Binding Exemples</h1><!--exemple event binding-->
+<button class="btn btn-info my-5 shadow">Cliquez ici</button>
+<h3 (mouseover)="onSurvol()" class="bg-warning w-50 p-4">Survoler moi!</h3>
+
+
+<h2>Exemple 3</h2>
+<input class="form-group" #input type="text"><!--on utilise une reference locale avec le #-->
+<br>
+<button (click)="onclickButton(input.value)" class="btn btn-danger">Envoyer</button>
+
+

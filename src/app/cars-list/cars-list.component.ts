@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarsListComponent implements OnInit {
    
-   enfantUn:any = { name : "Mercedes AMG" , price : 45000 } ;
-   enfantDeux:any = { name : "Range Rover evoque", price : 50000 };
-   enfantTrois:any = { name : "Ferrari F50" , price : 5550000 };
+   carOne:any = { name : "pagani" , 
+                    pays : "italie", 
+                    perf: 3.2  , 
+                    power: 765} ;
+   carTwo:any = { name : "koenigsegg rs" , 
+                      pays : "suede", 
+                      perf: 2.6  , 
+                      power: 1383 } ;
+   carThree:any = { name : "zenvo tsr s" , 
+                      pays : "danemark", 
+                      perf: 2.8  , 
+                      power: 1200 };
 
    carUpdate:any;
    

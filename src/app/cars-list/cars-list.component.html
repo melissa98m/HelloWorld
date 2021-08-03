@@ -5,10 +5,14 @@
     {{ mardiMatin }}
     {{ age }} ans 
    
-
-    <div class="border p-2 badge-dark text-white">
+     <h1>property Binding = Bind = lié..</h1>
+    <div class=" text-center shadow border p-2 badge-dark text-white">
         <h1>{{ game.title }}</h1>
         <p>{{ game.support }}</p>
         <p>Multi:{{ game.multi }} Joueurs</p>
         <p>En stock : {{ getStock() }} articles en stock</p>
+        <img [src]="coverImage" alt="{{ game.title }}">
+        <button class="my-3 btn btn-outline-success" [disabled]="isAvailable()">Commander</button>
     </div>
+
+    {{ getWakeUp() }}

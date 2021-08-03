@@ -11,13 +11,14 @@ export class CarsListComponent implements OnInit {
    enfantDeux:any = { name : "Range Rover evoque", price : 50000 };
    enfantTrois:any = { name : "Ferrari F50" , price : 5550000 };
 
-   
+   carUpdate:any;
    
  
 
      constructor() { }
 
   ngOnInit(): void {
+    this.carUpdate = new Date();
   }
 
 }

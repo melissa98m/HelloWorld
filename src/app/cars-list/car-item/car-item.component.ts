@@ -9,13 +9,25 @@ export class CarItemComponent implements OnInit {
  
 
  @Input() car:any;
- 
+
+ disable :any = false;
+ alert :any = "";
+ onclickButton(){  
+  if(this.disable == false){
+    this.disable = true
+  }
+  this.alert = "Vous avez reserver la voiture! ";
+  return this.disable
+  }
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  
+  
+  
 }
 
 

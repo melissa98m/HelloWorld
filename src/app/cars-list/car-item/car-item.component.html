@@ -1,6 +1,9 @@
 <div class="p-5 card m-2 border-warning d-inline-block text-center">
-<p><strong>{{ car.name }}</strong> </p>
-<p>{{ car.pays }}</p>
-<p>Perf 0 à 100 km/h :{{ car.perf }}sec</p>
-<p>Puissance: {{ car.power }}CH</p>
+    <p><strong>{{ car.name }}</strong> </p>
+    <p>{{ car.pays }}</p>
+    <p>Perf 0 à 100 km/h :{{ car.perf }}sec</p>
+    <p>Puissance: {{ car.power }}CH</p>
+    <p>Vous souahitez reserver cette voiture</p>
+    <button type="button" class="btn btn-primary" (click)="onclickButton()" [disabled] = disable >Reserver cette voiture</button>
+    <p>{{ alert }}</p>
 </div>

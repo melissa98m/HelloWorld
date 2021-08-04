@@ -12,6 +12,8 @@ export class DriversListComponent implements OnInit {
     author: 'moi',
     price: null
   };
+
+  games:string[] =["PES06" , "MineCraft" , "Shenmue", "Evil"];
   constructor() { }
 
   ngOnInit(): void {

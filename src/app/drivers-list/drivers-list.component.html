@@ -1,3 +1,12 @@
 <h1 class="my-5">
     Nos pilotes
 </h1>
+<p *ngIf="isOnline">Thomas a dit à Andréa que ....</p>
+
+<div class="p-5 card bg-info">
+<h2>{{ book.title }}</h2>
+<p>{{ book.author }}</p>
+<p><span *ngIf="book.price"> prix : {{ book.price }} €</span>
+   <span *ngIf="book.price == null">Non communiqué</span>
+</p>
+</div>

@@ -19,7 +19,17 @@
   <hr>
   <h3>Directive style</h3>
     <p [style.color]="colorOne">
-        style.color  fonctinne aussi avec une methode dans la classe!</p>
-    <p [style.color]="getColor()">Avec le methode dans la classe</p>
+        [style.propriété] on peut mettre n'importe quelle propriété css 
+        style.color  </p>
+    <p [style.color]="getColor()">fonctinne aussi avec une methode dans la classe!</p>
     <p [style.color]="'gold'">ou directement avec la couleur voulue mais c'est pas bien de faire comme ça</p>
-    
+    <div [style.background-color]="OnOff ? colorOne : getColor()">
+        Affiche selon une condition
+        ? est un ternaire = condition ? "dans ce cas" : "dans l'autre cas"
+        c'est un if/else sur une ligne
+    </div>
+   
+  <button (click)="onSwitch()" class="btn btn-primary my-5">
+      <span *ngIf="!OnOff">On</span>
+      <span *ngIf="OnOff">Off</span>
+  </button>

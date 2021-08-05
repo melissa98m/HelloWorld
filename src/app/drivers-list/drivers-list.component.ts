@@ -17,6 +17,9 @@ export class DriversListComponent implements OnInit {
   
   colorOne:string = "blue";
   
+  OnOff:boolean = true;
+
+
   constructor() { }
 
   ngOnInit(): void {
@@ -26,5 +29,11 @@ export class DriversListComponent implements OnInit {
  getColor(){
   return "green";
 }
-
+onSwitch(){
+  if(this.OnOff){
+    this.OnOff = false;
+  }else{
+    this.OnOff= true ;
+}
+}
 }

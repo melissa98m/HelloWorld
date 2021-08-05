@@ -14,9 +14,17 @@ export class DriversListComponent implements OnInit {
   };
 
   games:string[] =["PES06" , "MineCraft" , "Shenmue", "Evil Dead"];
+  
+  colorOne:string = "blue";
+  
   constructor() { }
 
   ngOnInit(): void {
   }
   isOnline:boolean = true;
+
+ getColor(){
+  return "green";
+}
+
 }

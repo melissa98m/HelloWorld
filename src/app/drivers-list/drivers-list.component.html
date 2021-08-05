@@ -33,6 +33,7 @@
       <span *ngIf="!OnOff">On✔</span>
       <span *ngIf="OnOff">Off✖</span>
   </button>
+  <h2>NgStyle</h2>
   <div [ngStyle]= "{ color:colorOne ,
                      margin:MarginPts , 
                      padding:'20px' , 
@@ -42,3 +43,27 @@
         il y a plus de possibilités
     </div>
     <p>Pourquoi l'un pas l'autre le [style] on peut mettre q'une choses et l'autre plusieurs choses et plusieurs conditions</p>
+
+
+
+    <h2>NgClass</h2>
+
+    <p [ngClass]= "{'text-center':true}">
+        NgClass on met directement la classe css avec la condition derriere
+      <!--- [ngClass]="{'text-center':true}"-->
+</p>
+
+<div class="card shadow text-center">
+    <h3>{{ product.label }}</h3>
+    <hr>
+    <p>{{ product.price }} €</p>
+    <p >Quantité : 
+        <span [ngClass]= "{'badge':true,
+                        'badge-success': product.stock > 5 ,
+                        'badge-warning': product.stock <= 5,
+                        'badge-danger' : product.stock == 0
+                        }">
+        {{product.stock }} en stock
+        </span>
+        </p>
+</div>

@@ -20,6 +20,13 @@ export class DriversListComponent implements OnInit {
   OnOff:boolean = true;
 
  MarginPts:string = "50";
+
+
+ product:any= { 
+   label: 'iphone',
+   price: 1522,
+   stock: 15
+ }
   constructor() { }
 
   ngOnInit(): void {

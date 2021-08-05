@@ -19,7 +19,7 @@ export class DriversListComponent implements OnInit {
   
   OnOff:boolean = true;
 
-
+ MarginPts:string = "50";
   constructor() { }
 
   ngOnInit(): void {

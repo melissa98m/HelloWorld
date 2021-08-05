@@ -30,6 +30,14 @@
     </div>
    
   <button (click)="onSwitch()" class="btn btn-primary my-5">
-      <span *ngIf="!OnOff">On</span>
-      <span *ngIf="OnOff">Off</span>
+      <span *ngIf="!OnOff">On✔</span>
+      <span *ngIf="OnOff">Off✖</span>
   </button>
+  <div [ngStyle]= "{ color:colorOne ,
+                     margin:MarginPts , 
+                     padding:'20px' , 
+                     backgroundColor:getColor() 
+                    }">
+      [ngStyle] ici on declare un object  ,on peut mettre pluseurs DOM dedans , color , backgroung ...
+        il y a plus de possibilités
+    </div>

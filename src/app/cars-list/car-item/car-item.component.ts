@@ -14,7 +14,7 @@ export class CarItemComponent implements OnInit {
   
   bookingMessage: string = "Réserver maintenant !";
   
-
+ colortext:string = "green";
  disable :any = false;
  alert :any = "";
  onclickButton(){  
@@ -27,6 +27,7 @@ export class CarItemComponent implements OnInit {
   onBooking(){
     this.isBooked= true;
     this.bookingMessage= "Bonne route ! [réservée]";
+    
   }
 
 

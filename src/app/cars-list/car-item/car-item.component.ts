@@ -10,6 +10,11 @@ export class CarItemComponent implements OnInit {
 
  @Input() car:any;
 
+ isBooked:boolean = false;
+  
+  bookingMessage: string = "Réserver maintenant !";
+  
+
  disable :any = false;
  alert :any = "";
  onclickButton(){  
@@ -19,6 +24,11 @@ export class CarItemComponent implements OnInit {
   this.alert = "Vous avez reserver la voiture! ";
   return this.disable
   }
+  onBooking(){
+    this.isBooked= true;
+    this.bookingMessage= "Bonne route ! [réservée]";
+  }
+
 
   constructor() { }
 

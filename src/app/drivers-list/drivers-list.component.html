@@ -13,3 +13,4 @@
 <ul>
     <li *ngFor="let game of games">{{ game }}</li><!--*ngFor peut etre sur nimporte quelle balise html la variable game peut s'appeler x ou tutu nimporte-->
 </ul>
+<p *ngFor="let game of games let i = index">{{ i }} {{ game }}</p><!--affiche l'index avec la boucle-->

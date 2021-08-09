@@ -73,4 +73,9 @@ export class DriversListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  OrdreCroissant(){
+    const orderDriver = this.drivers.sort((a:any, b:any ) => b.likeIts - a.likeIts);
+    return orderDriver
+
+  }
 }

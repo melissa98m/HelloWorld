@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-driver-item',
@@ -7,9 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DriverItemComponent implements OnInit {
 
+
+ 
+  
+ @Input() drivers:any;
+  
   constructor() { }
 
   ngOnInit(): void {
   }
+ 
+  addLikes(): void {
+    this.drivers.likeIts += 1 ;
 
+  }
+  remoteLikes(): void {
+    this.drivers.likeIts-= 1;
+  }
+
+  
+  
+
+ 
 }

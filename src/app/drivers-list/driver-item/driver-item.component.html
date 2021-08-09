@@ -1,1 +1,36 @@
-<p>driver-item works!</p>
+<div class="card m-3 shadow  w-75 d-inline-block text-center" [ngClass]="{ 'border' : true , 
+                                                                'border-danger' : drivers.likeIts < 0 , 
+                                                                'border-success' : drivers.likeIts > 0 }">
+<div class="card-header bg-dark text-white ">
+    
+    <h3 class="card-title">{{ drivers.fullName | titlecase }}</h3>  
+ </div>
+ <div class="card-body">
+    <img [src]="drivers.coverImage" class="img-fluid w-100" alt="photo {{drivers.fullName}}">
+    
+
+
+   
+    <p>Origine :
+        <span *ngIf="drivers.pays == null">NC</span>
+        <span>{{ drivers.pays | uppercase }}</span>
+    </p>
+    <p> Discipline : 
+        <span *ngIf="drivers.category == null">NC</span>
+        <span class='badge' [ngClass]='{ 
+            "badge-info": drivers.category == "rallye",
+            "badge-danger": drivers.category == "drag",
+            "badge-primary": drivers.category == "nascar",
+            "badge-success": drivers.category == "gymkhana",
+            "badge-warning": drivers.category == "formule 1"
+        }'>
+            {{ drivers.category | titlecase }}
+        </span>
+    </p>
+
+  
+    <i class="fas fa-thumbs-up btn btn-success mx-2" (click)="addLikes()"></i>
+
+    <i class="fas fa-thumbs-down btn btn-danger mx-2" (click)="remoteLikes()"></i>
+    </div>
+</div>

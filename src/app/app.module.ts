@@ -19,6 +19,7 @@ import { DriverItemComponent } from './drivers-list/driver-item/driver-item.comp
 
 import { BananeService } from './services/banane_services';
 import { RestaurantService } from './services/restaurant.service';
+import { DataService } from './services/data.service';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { RestaurantService } from './services/restaurant.service';
   ],
   providers: [{ provide: LOCALE_ID, useValue: "fr-FR"},
                 BananeService, 
-                RestaurantService],
+                RestaurantService,
+                DataService,],
 
   bootstrap: [AppComponent]
 })

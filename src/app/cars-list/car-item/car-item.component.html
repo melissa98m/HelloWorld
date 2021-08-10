@@ -17,8 +17,8 @@
             <span *ngIf="car.power == null">NC</span>
         </p>
         <p>0 à 100 km/h: 
-            <span *ngIf="car.perf AND car.perf > 0">{{car.perf}} sec </span>
-            <span *ngIf="car.perf == null OR car.perf < 0">NC</span>
+            <span *ngIf="car.perf && car.perf > 0">{{car.perf}} sec </span>
+            <span *ngIf="car.perf == null || car.perf < 0">NC</span>
         </p>
 
         <p [ngClass] = "{'text-success': isBooked}">{{ bookingMessage }}</p>

@@ -17,6 +17,9 @@ import { CarItemComponent } from './cars-list/car-item/car-item.component';
 import { FormsModule } from '@angular/forms';
 import { DriverItemComponent } from './drivers-list/driver-item/driver-item.component';
 
+import { BananeService } from './services/banane_services';
+import { RestaurantService } from './services/restaurant.service';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { DriverItemComponent } from './drivers-list/driver-item/driver-item.comp
     AppRoutingModule,
     FormsModule
   ],
-  providers: [{ provide: LOCALE_ID, useValue: "fr-FR" }],
+  providers: [{ provide: LOCALE_ID, useValue: "fr-FR"},
+                BananeService, 
+                RestaurantService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

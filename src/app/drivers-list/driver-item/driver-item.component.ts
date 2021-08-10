@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class DriverItemComponent implements OnInit {
 
 
- 
+ addLikeMessage :string = "";
   
  @Input() drivers:any;
   
@@ -18,11 +18,13 @@ export class DriverItemComponent implements OnInit {
   }
  
   addLikes(): void {
-    this.drivers.likeIts += 1 ;
+    this.drivers.likeIts ++ ,
+    this.addLikeMessage = "Vous avez ajouté 1 Like";
 
   }
   remoteLikes(): void {
-    this.drivers.likeIts-= 1;
+    this.drivers.likeIts -- ,
+    this.addLikeMessage = "Vous avez retiré 1 Like";
   }
 
   

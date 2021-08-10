@@ -73,5 +73,6 @@ export class DriversListComponent implements OnInit {
   ngOnInit(): void {
   }
 
- 
-}
+
+  }
+

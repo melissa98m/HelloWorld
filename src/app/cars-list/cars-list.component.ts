@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< Updated upstream
+=======
+import { Car } from '../models/Car';
+import { DataService } from '../services/data.service';
+>>>>>>> Stashed changes
 
 @Component({
   selector: 'app-cars-list',
@@ -7,6 +12,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarsListComponent implements OnInit {
    
+<<<<<<< Updated upstream
   cars: any = [
     {
       name: "pagani huayra",
@@ -53,6 +59,9 @@ export class CarsListComponent implements OnInit {
     }
   ];
 
+=======
+  cars:Car[] | undefined;
+>>>>>>> Stashed changes
 
   
                       

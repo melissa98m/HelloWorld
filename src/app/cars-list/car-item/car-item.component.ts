@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Car } from 'src/app/models/Car';
 
 @Component({
   selector: 'app-car-item',
@@ -8,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CarItemComponent implements OnInit {
  
 
- @Input() car:any;
+ @Input() car!:Car;
 
  isBooked:boolean = false;
   

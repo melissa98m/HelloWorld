@@ -22,6 +22,7 @@ export class CarsListComponent implements OnInit {
      newCar:Car = new Car("tuture" , "Frenchese" , "" , 1500,  19);
   ngOnInit(): void {
     this.carUpdate = new Date();
+    this.data.cars.push(this.newCar);
     this.cars = this.data.getAllCars();
   }
 

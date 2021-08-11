@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< Updated upstream
-=======
-import { Car } from '../models/Car';
 import { DataService } from '../services/data.service';
->>>>>>> Stashed changes
 
 @Component({
   selector: 'app-cars-list',
@@ -12,56 +8,7 @@ import { DataService } from '../services/data.service';
 })
 export class CarsListComponent implements OnInit {
    
-<<<<<<< Updated upstream
-  cars: any = [
-    {
-      name: "pagani huayra",
-      pays: "italie",
-      coverImage:"./assets/img/cars/pagani.jpg",
-      power: 765,
-      //perf: 3.2
-    },
-    {
-      name: "koenigsegg agera rs",
-      pays: "suède",
-      coverImage:"./assets/img/cars/koenigsegg.jpg",
-      power: 1383,
-      perf: 2.6
-
-    },
-    {
-      name: "zenvo tsr s",
-      pays: "danemark",
-      coverImage:"./assets/img/cars/zenvo.jpg",
-      power: 1200,
-      perf: 2.8
-    },
-    {
-      name: "bugatti chiron",
-      pays: "france",
-      coverImage:"./assets/img/cars/bugatti.jpg",
-      power: 1500,
-      perf: 2.4
-    },
-    {
-      name: "mercedes amg one",
-      pays: "allemagne",
-      coverImage:"./assets/img/cars/mercedes.jpg",
-      power: 1000,
-      perf: 2.2
-    },
-    {
-      name: "ferrari sf90",
-      pays: "italie",
-      coverImage:"./assets/img/cars/ferrari.jpg",
-      power: 1000,
-      perf: 2.5
-    }
-  ];
-
-=======
-  cars:Car[] | undefined;
->>>>>>> Stashed changes
+  cars: any;
 
   
                       
@@ -69,10 +16,13 @@ export class CarsListComponent implements OnInit {
    
  
 
-     constructor() { }
+     constructor(private data: DataService) {
+      
+      }
 
   ngOnInit(): void {
     this.carUpdate = new Date();
+    this.cars = this.data.getAllCars();
   }
 
 }

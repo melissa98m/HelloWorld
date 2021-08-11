@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Car } from '../models/Car';
 
 
 @Injectable({
@@ -65,13 +66,13 @@ export class DataService {
     },
     
   ];
-  cars: any = [
+  cars: Car[] = [
     {
       name: "pagani huayra",
       pays: "italie",
       coverImage:"./assets/img/cars/pagani.jpg",
       power: 765,
-      //perf: 3.2
+      perf: 3.2
     },
     {
       name: "koenigsegg agera rs",

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Car } from '../models/Car';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -7,10 +8,8 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./cars-list.component.css']
 })
 export class CarsListComponent implements OnInit {
-   
-  cars: any;
 
-  
+  cars:Car[] | undefined;
                       
    carUpdate:any;
    
@@ -20,6 +19,7 @@ export class CarsListComponent implements OnInit {
       
       }
 
+     newCar:Car = new Car("tuture" , "Frenchese" , "" , 1500,  19);
   ngOnInit(): void {
     this.carUpdate = new Date();
     this.cars = this.data.getAllCars();

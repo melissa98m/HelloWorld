@@ -20,6 +20,7 @@ import { DriverItemComponent } from './drivers-list/driver-item/driver-item.comp
 import { BananeService } from './services/banane_services';
 import { RestaurantService } from './services/restaurant.service';
 import { DataService } from './services/data.service';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { DataService } from './services/data.service';
     FourOhFourComponent,
     CarItemComponent,
     DriverItemComponent,
+    FooterComponent,
     
   ],
   imports: [

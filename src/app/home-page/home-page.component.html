@@ -1,3 +1,6 @@
+
+<app-header></app-header>
+
 <div class="jumbotron my-5 text-center shadow rounded">
     <h1 class="display-3 text-danger">{{ title }}</h1>
     <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
@@ -12,5 +15,8 @@
     <p>{{ prixResto }}€</p>
     <p>{{ fruit }}</p>
     
+  <app-driver-item *ngfor="let onedrvier of drivers | sort" [drivers]="onedrvier"></app-driver-item>
+
+
   <router-outlet></router-outlet>
 </div>

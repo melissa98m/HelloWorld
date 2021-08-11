@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -114,21 +115,41 @@ export class DataService {
   constructor() { }
   getAllCars() { 
     return this.cars;
-}
+    }
   getAllDrivers() { 
     return this.drivers;
-  }
+    }
 
-  getBestDrivers(nblike:number) { 
+  getBestDrivers(nblike:number):any { 
+     this.drivers.slice()
+     this.drivers.sort(function(a:any, b:any) {
+      return b - a;
+    });
+     for (var i= 2; i<this.drivers.length; i++) {
+        
+       return this.drivers[nblike];
+     }
+     }
+   
 
-    this.getAllDrivers(drivers.likeIts)
-    nblike = driver
-  }
-  getBestCars(nbCh:number) {
+        
+  
+  getBestCars(nbCh:number):any {
 
-   }
+   var allCars = this.cars.slice() ;
+    
+   allCars.sort( (carB:any, carA:any) => {
+      return carA.power - carB.power
+    })
+    
+        
+      return allCars.slice(allCars.length , nbCh);
+    }
+   
 
-  ngOnInit():void {
+  
+  
+   ngOnInit():void {
 
   }
 

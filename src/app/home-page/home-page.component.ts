@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 
 
@@ -10,19 +10,18 @@ import { DataService } from '../services/data.service';
 export class HomePageComponent implements OnInit {
   
   
-  @Input() drivers:any;
-  @Input() cars:any;
+  
   
   title:string = 'Drive X';
-  
-  
+  bestdrivers:any ;
+  bestcars:any ;
   
  
   
-  constructor( private bestCars:DataService , bestDriver:DataService) { 
+  constructor( private data:DataService) { 
    
-   bestCars.getBestCars(2)
-   bestDriver.getBestDrivers(1)
+   this.bestdrivers = this.data.getBestDrivers(3)
+   this.bestcars = this.data.getBestCars(2)
    
   }
   ngOnInit(): void {

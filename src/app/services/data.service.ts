@@ -124,12 +124,12 @@ export class DataService {
     return this.drivers;
     }
 
-  getBestDrivers(nblike:number):any { 
+  getBestDrivers(nb:number):any { 
     var allDrivers = this.drivers.slice();
     allDrivers.sort( (driverB:any , driverA:any) => {
       driverA.likeIts -  driverB.likeIts;
     })
-    return allDrivers.slice(allDrivers.length , nblike);
+    return allDrivers.slice(0 , nb);
      }
    
 
@@ -144,7 +144,7 @@ export class DataService {
     })
     
         
-      return allCars.slice(allCars.length , nbCh);
+      return allCars.slice(0 , nbCh);
     }
 
 }

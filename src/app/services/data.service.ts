@@ -113,6 +113,10 @@ export class DataService {
 
 
   constructor() { }
+
+   ngOnInit():void {
+
+  }
   getAllCars() { 
     return this.cars;
     }
@@ -121,14 +125,11 @@ export class DataService {
     }
 
   getBestDrivers(nblike:number):any { 
-     this.drivers.slice()
-     this.drivers.sort(function(a:any, b:any) {
-      return b - a;
-    });
-     for (var i= 2; i<this.drivers.length; i++) {
-        
-       return this.drivers[nblike];
-     }
+    var allDrivers = this.drivers.slice();
+    allDrivers.sort( (driverB:any , driverA:any) => {
+      driverA.likeIts -  driverB.likeIts;
+    })
+    return allDrivers.slice(allDrivers.length , nblike);
      }
    
 
@@ -145,12 +146,5 @@ export class DataService {
         
       return allCars.slice(allCars.length , nbCh);
     }
-   
-
-  
-  
-   ngOnInit():void {
-
-  }
 
 }

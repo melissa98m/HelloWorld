@@ -1,5 +1,5 @@
 
-<app-header></app-header>
+
 
 <div class="jumbotron my-5 text-center shadow rounded">
     <h1 class="display-3 text-danger">{{ title }}</h1>
@@ -11,12 +11,20 @@
     </p>
 
    
-    <h2>{{ restoName }}</h2>
-    <p>{{ prixResto }}€</p>
-    <p>{{ fruit }}</p>
-    
-  <app-driver-item *ngfor="let onedrvier of drivers | sort" [drivers]="onedrvier"></app-driver-item>
 
+   
 
-  <router-outlet></router-outlet>
 </div>
+<div class="row row-cols-3 justify-content-center">
+<h2>Nos meilleurs pilotes</h2>
+
+    <app-drivers-list *ngFor="let  bestpilote of drivers"></app-drivers-list>
+</div>
+<div class="row row-cols-3 justify-content-center">
+  <h2>Nos meilleurs voitures</h2>
+  
+      <app-cars-list  *ngFor="let bestvoiture of cars"></app-cars-list>
+  </div>
+
+
+

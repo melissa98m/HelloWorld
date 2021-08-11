@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { BananeService } from '../services/banane_services';
 import { DataService } from '../services/data.service';
-import { RestaurantService } from '../services/restaurant.service';
+
 
 @Component({
   selector: 'app-home-page',
@@ -9,26 +8,26 @@ import { RestaurantService } from '../services/restaurant.service';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
+  
+  
   @Input() drivers:any;
+  @Input() cars:any;
   
   title:string = 'Drive X';
-  fruit:any = this.banana.getFruit();
   
-
-  prixResto:number = this.resto.getPrice();
-  restoName:string = this.resto.name;
-
+  bestvoiture: any = this.bestcars.getBestCars(2)
+  bestpilote: any = this.bestvoiture.getBestDrivers(1)
+  
  
   
-  constructor(private banana:BananeService , private resto:RestaurantService , private bestDrivers:DataService) { 
-   banana.getFruit()
-  
+  constructor( private bestcars:DataService , bestDriver:DataService) { 
+   
+   bestcars.getBestCars(2)
+   bestDriver.getBestDrivers(1)
    
   }
   ngOnInit(): void {
-   console.log(this.banana.getFruit())
-    console.log(this.resto.name)
-    
+
   }
 
 

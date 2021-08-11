@@ -19,6 +19,7 @@ import { DriverItemComponent } from './drivers-list/driver-item/driver-item.comp
 import { FooterComponent } from './footer/footer.component'
 
 import { DataService } from './services/data.service';
+import { NewCarComponent } from './cars-list/new-car/new-car.component';
 
 
 
@@ -33,6 +34,7 @@ import { DataService } from './services/data.service';
     CarItemComponent,
     DriverItemComponent,
     FooterComponent,
+    NewCarComponent,
     
   ],
   imports: [

@@ -15,14 +15,13 @@ export class HomePageComponent implements OnInit {
   
   title:string = 'Drive X';
   
-  bestvoiture: any = this.bestcars.getBestCars(2)
-  bestpilote: any = this.bestvoiture.getBestDrivers(1)
+  
   
  
   
-  constructor( private bestcars:DataService , bestDriver:DataService) { 
+  constructor( private bestCars:DataService , bestDriver:DataService) { 
    
-   bestcars.getBestCars(2)
+   bestCars.getBestCars(2)
    bestDriver.getBestDrivers(1)
    
   }

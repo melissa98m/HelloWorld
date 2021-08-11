@@ -8,7 +8,7 @@ import { DataService } from '../services/data.service';
 })
 export class CarsListComponent implements OnInit {
    
-  cars: any = this.car.getAllCars();
+  cars: any;
 
   
                       
@@ -16,12 +16,13 @@ export class CarsListComponent implements OnInit {
    
  
 
-     constructor(private car: DataService) {
-       car.getAllCars()
+     constructor(private data: DataService) {
+      
       }
 
   ngOnInit(): void {
     this.carUpdate = new Date();
+    this.cars = this.data.getAllCars();
   }
 
 }

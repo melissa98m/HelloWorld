@@ -16,11 +16,10 @@ import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { CarItemComponent } from './cars-list/car-item/car-item.component';
 import { FormsModule } from '@angular/forms';
 import { DriverItemComponent } from './drivers-list/driver-item/driver-item.component';
+import { FooterComponent } from './footer/footer.component'
 
-import { BananeService } from './services/banane_services';
-import { RestaurantService } from './services/restaurant.service';
 import { DataService } from './services/data.service';
-import { FooterComponent } from './footer/footer.component';
+
 
 
 @NgModule({
@@ -42,8 +41,6 @@ import { FooterComponent } from './footer/footer.component';
     FormsModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: "fr-FR"},
-                BananeService, 
-                RestaurantService,
                 DataService,],
 
   bootstrap: [AppComponent]

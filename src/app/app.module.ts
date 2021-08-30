@@ -21,6 +21,7 @@ import { FooterComponent } from './footer/footer.component'
 import { DataService } from './services/data.service';
 import { NewCarComponent } from './cars-list/new-car/new-car.component';
 import { NewDriverComponent } from './drivers-list/new-driver/new-driver.component';
+import { RequeteComponent } from './requete/requete.component';
 
 
 
@@ -37,6 +38,7 @@ import { NewDriverComponent } from './drivers-list/new-driver/new-driver.compone
     FooterComponent,
     NewCarComponent,
     NewDriverComponent,
+    RequeteComponent,
     
   ],
   imports: [

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Car } from '../models/Car';
 
 
@@ -111,12 +112,13 @@ export class DataService {
       perf: 2.5
     }
   ];
+  
 
 
   constructor() { }
 
    ngOnInit():void {
-
+   
   }
   getAllCars() { 
     return this.cars;
@@ -148,4 +150,29 @@ export class DataService {
       return allCars.slice(0 , nbCh);
     }
 
-}
+
+    addCar(name: string, pays:string , coverImage:string , perf:number, power:number){
+
+      const newCar = {
+        name: '',
+        pays: '' , 
+        coverImage: '' , 
+        perf: 0 ,
+        power: 0
+      };
+      newCar.name = name ,
+      newCar.pays = pays ,
+      newCar.coverImage = coverImage ,
+      newCar.perf = perf ,
+      newCar.power = power ;
+
+      
+      this.cars.push(newCar);
+     
+      
+       }
+  
+  
+    }
+
+;

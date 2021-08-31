@@ -151,27 +151,9 @@ export class DataService {
     }
 
 
-    addCar(name: string, pays:string , coverImage:string , perf:number, power:number){
-
-      const newCar = {
-        name: '',
-        pays: '' , 
-        coverImage: '' , 
-        perf: 0 ,
-        power: 0
-      };
-      newCar.name = name ,
-      newCar.pays = pays ,
-      newCar.coverImage = coverImage ,
-      newCar.perf = perf ,
-      newCar.power = power ;
-
-      
-      this.cars.push(newCar);
-     
-      
-       }
-  
+    addCar(car:Car){
+      this.cars.push(car);
+    }
   
     }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Car } from 'src/app/models/Car';
 
 import { DataService } from 'src/app/services/data.service';
 
@@ -17,16 +18,19 @@ export class NewCarComponent implements OnInit {
   ngOnInit(): void {
   }
  onSubmit(myForm: NgForm ) {
-   const name = myForm.value['name'];
-   const pays = myForm.value['pays'];
-   const coverImage = myForm.value['coverImage'];
-   const perf = myForm.value['perf'];
-   const power = myForm.value['power'];
-   console.log(name , pays , coverImage ,perf , power);
-   this.data.addCar(name , pays , coverImage ,perf , power)
    
+  const car = new Car(
+    myForm.value['name'],
+    myForm.value['pays'],
+    myForm.value['coverImage'],
+    myForm.value['power'],
+    myForm.value['perf']
+    );
 
-   this.router.navigate(['/cars']);
+  this.data.addCar(car);
+  
+ 
+   this.router.navigate(['cars']);
    
 
  }

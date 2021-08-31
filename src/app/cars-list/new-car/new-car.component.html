@@ -1,26 +1,47 @@
 
 <h1 class="my-5">Créer une voiture</h1>
 <div class="col-6 border shadow my-5 p-5">
-<form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+<form (ngSubmit)="onSubmit(myForm)"  #myForm="ngForm">
     <div class="form-group">
       <label for="name">Nom de la voiture</label>
-      <input type="text" class="form-control" id="name" name="name" ngModel required>
+      <input type="text" class="form-control" id="name" 
+          name="name" #name="ngModel" ngModel required>
+      <div [hidden]="name.valid || name.untouched"
+     class="alert alert-danger">Le nom est requis</div>
     </div>
+ 
     <div class="form-group">
       <label for="pays">Pays d'origine</label>
-      <input type="text" class="form-control" id="pays" name="pays" ngModel required>
+      <input type="text" class="form-control" id="pays" 
+        name="pays"#pays="ngModel" ngModel required>
+      <div [hidden]="pays.valid || pays.untouched"
+      class="alert alert-danger">Le pays est requis
     </div>
+     </div>
     <div class="form-group">
         <label for="coverImage">Photo de la voiture (URL)</label>
-        <input type="text" class="form-control" id="coverImage" name="coverImage" ngModel required>
-      </div>
+        <input type="text" class="form-control" id="coverImage"  
+       
+          name="coverImage" #coverImage="ngModel" ngModel required>
+         <div [hidden]="coverImage.valid || coverImage.untouched"
+         class="alert alert-danger">Une image est requise
+       </div>
+        </div>
       <div class="form-group">
         <label for="power">Puissance </label>
-        <input type="number" class="form-control" id="power" name="power" ngModel required>
+        <input type="number" class="form-control" id="power" name="power"  
+        name="power" #power="ngModel" ngModel required>
+        <div [hidden]="power.valid || power.untouched"
+        class="alert alert-danger">Une image est requise
+      </div>
       </div>
       <div class="form-group">
         <label for="perf">Temps de 0 à 100 km/h</label>
-        <input type="number" class="form-control" id="perf" name="perf" ngModel required>
+        <input type="number" class="form-control" id="perf" name="perf" 
+         name="perf" #perf="ngModel" ngModel required>
+        <div [hidden]="perf.valid || perf.untouched"
+        class="alert alert-danger">Une image est requise
+      </div>
       </div>
       <button type="submit" class="btn btn-primary my-5" [disabled]="myForm.invalid">Enregistrer</button>
   </form>

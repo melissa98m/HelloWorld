@@ -6,49 +6,37 @@
 
     <div class="form-group">
       <label for="fullname">Nom du pilote</label>
-      <input type="text" class="form-control" name="fullname" id="fullname" #fullname="ngModel" ngModel required>
+      <input type="text" class="form-control" name="fullname" id="fullname"   required>
 
-      <div [hidden]="fullname.valid || fullname.untouched" class="text-center my-3 alert alert-danger">
-       Nom requis
-      </div>
+      
     </div>
 
     <div class="form-group">
       <label for="pays">Pays d'origine</label>
-      <input type="text" class="form-control" name="pays" id="pays" #pays="ngModel" ngModel required>
+      <input type="text" class="form-control" name="pays" id="pays" required>
 
-      <div [hidden]="pays.valid || pays.untouched" class="text-center my-3 alert alert-danger">
-        Pays requis
-      </div>
+     
     </div>
 
     <div class="form-group">
       <label for="coverImage">Photo du pilote (url)</label>
-      <input type="text" class="form-control" name="coverImage" #coverImage="ngModel" id="coverImage" ngModel required>
+      <input type="text" class="form-control" name="coverImage" id="coverImage"  required>
 
-      <div [hidden]="coverImage.valid || coverImage.untouched" class="text-center my-3 alert alert-danger">
-       Une Image est requise
-      </div>
+      
 
     </div>
 
     <div class="form-group">
       <label for="category">Categorie</label>
-      <input type="text" class="form-control"  #category="ngModel" name="category" id="category" ngModel required>
+      <input type="text" class="form-control"  name="category" id="category"  required>
 
-      <div [hidden]="category.valid || category.untouched" class="text-center my-3 alert alert-danger">
-        La categorie est requise
-      </div>
+      
 
     </div>
 
     <div class="form-group">
       <label for="likeIts">Nombre de Likes</label>
-      <input type="number" class="form-control"  #likeIts="ngModel" name="likeIts" id="likeIts" ngModel required>
-
-      <div [hidden]="likeIts.valid || likeIts.untouched" class="text-center my-3 alert alert-danger">
-        Nombre de likes requis par defaut 0
-      </div>
+      <input type="number" class="form-control"  name="likeIts" id="likeIts" required>
     </div>
 
     <button type="submit" [disabled]="myForm.invalid" class="btn btn-success my-5">Enregister</button>

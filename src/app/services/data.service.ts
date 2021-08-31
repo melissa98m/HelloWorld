@@ -7,7 +7,8 @@ import { Drivers } from '../models/Drivers';
   providedIn: 'root'
 })
 export class DataService {
-  
+
+  categories:string[] = ["gymkhana", "nascar", "rallye", "drag", "formule 1"];
   
   drivers: Drivers[] = [
     {
@@ -129,6 +130,9 @@ export class DataService {
   getAllDrivers() { 
     return this.drivers;
     }
+    getAllCategories(){
+      return this.categories;
+  }
 
   getBestDrivers(nb:number):any { 
     var allDrivers = this.drivers.slice();

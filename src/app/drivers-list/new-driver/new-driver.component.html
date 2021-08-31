@@ -5,37 +5,66 @@
   <form (ngSubmit)="onSubmit" [formGroup]="driverForm">
 
     <div class="form-group">
-      <label for="fullname">Nom du pilote</label>
-      <input type="text" class="form-control" name="fullname" id="fullname"   required>
+      <label for="fullName">
+        <span class="text-danger" *ngIf=" driverForm.controls['fullName'].errors  && driverForm.controls['fullName'].hasError('required')  ">
+          *
+    </span> Nom du pilote</label>
+      <input type="text" class="form-control" name="fullName" id="fullName"   formControlName="fullName" required >
 
-      
+      <small class="badge badge-danger my-2" *ngIf="driverForm.controls['fullName'].hasError('required') &&  driverForm.controls['fullName'].touched " >
+
+        Ce champs est requis
+      </small>
     </div>
 
     <div class="form-group">
-      <label for="pays">Pays d'origine</label>
-      <input type="text" class="form-control" name="pays" id="pays" required>
+      <label for="pays"> <span class="text-danger" *ngIf=" driverForm.controls['pays'].errors  && driverForm.controls['pays'].hasError('required')  ">
+        *
+  </span> Pays d'origine</label>
+      <input type="text" class="form-control" name="pays" id="pays" formControlName="pays" required>
+      <small class="badge badge-danger my-2" *ngIf="driverForm.controls['pays'].hasError('required') &&  driverForm.controls['pays'].touched " >
 
-     
+        Ce champs est requis
+      </small>
+      <small class="badge badge-danger my-2" *ngIf="driverForm.controls['pays'].hasError('minlength')">
+        Minimum {{ minLong }} caractères requis.
+    </small>
+
+        
     </div>
 
     <div class="form-group">
-      <label for="coverImage">Photo du pilote (url)</label>
-      <input type="text" class="form-control" name="coverImage" id="coverImage"  required>
+      <label for="coverImage"> <span class="text-danger" *ngIf=" driverForm.controls['coverImage'].errors  && driverForm.controls['coverImage'].hasError('required')  ">
+        *
+  </span> Photo du pilote (url)</label>
+      <input type="text" class="form-control" name="coverImage" id="coverImage"  formControlName="coverImage" required>
 
-      
+      <small class="badge badge-danger my-2" *ngIf="driverForm.controls['coverImage'].hasError('required') &&  driverForm.controls['coverImage'].touched " >
+
+        Ce champs est requis
+      </small>
 
     </div>
 
     <div class="form-group">
-      <label for="category">Categorie</label>
-      <input type="text" class="form-control"  name="category" id="category"  required>
+      <label for="category"><span class="text-danger" *ngIf=" driverForm.controls['category'].errors  && driverForm.controls['category'].hasError('required')  ">
+        *
+  </span> Categorie</label>
+  <select class="form-control" name="category" id="category" formControlName="category"> 
+    <option class="badge" *ngFor="let category of categories" [value]="category" [ngClass]="{
+        'badge-success': category == 'gymkhana',
+        'badge-warning': category == 'formule 1',
+        'badge-info': category == 'rallye',
+        'badge-primary': category == 'nascar',
+        'badge-danger': category == 'drag'}">
 
-      
-
+        {{ category | titlecase }}
+    </option>
+</select> 
     </div>
 
     
 
-    <button type="submit"  class="btn btn-success my-5">Enregister</button>
+    <button type="submit"  class="btn btn-success my-5" [disabled]="driverForm.invalid">Enregister</button>
   </form>
 </div>

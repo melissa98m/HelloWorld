@@ -7,7 +7,7 @@
       <input type="text" class="form-control" id="name" 
           name="name" #name="ngModel" ngModel required>
       <div [hidden]="name.valid || name.untouched"
-     class="alert alert-danger">Le nom est requis</div>
+     class="alert alert-danger text-center">Le nom est requis</div>
     </div>
  
     <div class="form-group">
@@ -15,7 +15,7 @@
       <input type="text" class="form-control" id="pays" 
         name="pays"#pays="ngModel" ngModel required>
       <div [hidden]="pays.valid || pays.untouched"
-      class="alert alert-danger">Le pays est requis
+      class="alert alert-danger text-center">Le pays est requis
     </div>
      </div>
     <div class="form-group">
@@ -24,7 +24,7 @@
        
           name="coverImage" #coverImage="ngModel" ngModel required>
          <div [hidden]="coverImage.valid || coverImage.untouched"
-         class="alert alert-danger">Une image est requise
+         class="alert alert-danger text-center">Une image est requise
        </div>
         </div>
       <div class="form-group">
@@ -32,7 +32,7 @@
         <input type="number" class="form-control" id="power" name="power"  
         name="power" #power="ngModel" ngModel required>
         <div [hidden]="power.valid || power.untouched"
-        class="alert alert-danger">Une image est requise
+        class="alert alert-danger text-center">La puissance est requise
       </div>
       </div>
       <div class="form-group">
@@ -40,7 +40,7 @@
         <input type="number" class="form-control" id="perf" name="perf" 
          name="perf" #perf="ngModel" ngModel required>
         <div [hidden]="perf.valid || perf.untouched"
-        class="alert alert-danger">Une image est requise
+        class="alert alert-danger text-center">la perfermance est requises
       </div>
       </div>
       <button type="submit" class="btn btn-primary my-5" [disabled]="myForm.invalid">Enregistrer</button>

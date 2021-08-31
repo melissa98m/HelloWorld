@@ -1,18 +1,56 @@
-<h1 class="my-5">Créer un pilote</h1>
+<h1 class="my-5">
+  Créer une voiture
+</h1>
 <div class="col-6 border shadow my-5 p-5">
-<form>
+  <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+
     <div class="form-group">
-      <label for="name">Nom du pilote</label>
-      <input type="text" class="form-control" id="name" >
+      <label for="fullname">Nom du pilote</label>
+      <input type="text" class="form-control" name="fullname" id="fullname" #fullname="ngModel" ngModel required>
+
+      <div [hidden]="fullname.valid || fullname.untouched" class="text-center my-3 alert alert-danger">
+       Nom requis
+      </div>
     </div>
+
     <div class="form-group">
       <label for="pays">Pays d'origine</label>
-      <input type="text" class="form-control" id="pays">
-    </div>
-    <div class="form-group">
-        <label for="coverImage">Photo du pilote (URL)</label>
-        <input type="text" class="form-control" id="coverImage">
+      <input type="text" class="form-control" name="pays" id="pays" #pays="ngModel" ngModel required>
+
+      <div [hidden]="pays.valid || pays.untouched" class="text-center my-3 alert alert-danger">
+        Pays requis
       </div>
-      <button type="submit" class="btn btn-primary my-5">Enregistrer</button>
+    </div>
+
+    <div class="form-group">
+      <label for="coverImage">Photo du pilote (url)</label>
+      <input type="text" class="form-control" name="coverImage" #coverImage="ngModel" id="coverImage" ngModel required>
+
+      <div [hidden]="coverImage.valid || coverImage.untouched" class="text-center my-3 alert alert-danger">
+       Une Image est requise
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <label for="category">Categorie</label>
+      <input type="text" class="form-control"  #category="ngModel" name="category" id="category" ngModel required>
+
+      <div [hidden]="category.valid || category.untouched" class="text-center my-3 alert alert-danger">
+        La categorie est requise
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <label for="likeIts">Nombre de Likes</label>
+      <input type="number" class="form-control"  #likeIts="ngModel" name="likeIts" id="likeIts" ngModel required>
+
+      <div [hidden]="likeIts.valid || likeIts.untouched" class="text-center my-3 alert alert-danger">
+        Nombre de likes requis par defaut 0
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="myForm.invalid" class="btn btn-success my-5">Enregister</button>
   </form>
-  </div>
+</div>

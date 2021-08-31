@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Car } from '../models/Car';
-
+import { Drivers } from '../models/Drivers';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
   
-  drivers: any = [
+  drivers: Drivers[] = [
     {
       fullName: "ken block",
       pays: "usa",
@@ -46,7 +46,7 @@ export class DataService {
     },
     {
       fullName: "shirley muldowney",
-      pays: null,
+      pays: "italie",
       coverImage: "./assets/img/drivers/shirleymuldowney.jpg",
       category: "drag",
       likeIts: 0
@@ -130,7 +130,7 @@ export class DataService {
   getBestDrivers(nb:number):any { 
     var allDrivers = this.drivers.slice();
     allDrivers.sort( (driverB:any , driverA:any) => {
-      driverA.likeIts -  driverB.likeIts;
+     return driverA.likeIts -  driverB.likeIts;
     })
     return allDrivers.slice(0 , nb);
      }
@@ -155,6 +155,10 @@ export class DataService {
       this.cars.push(car);
     }
   
+    addDriver(driver:Drivers){
+      this.drivers.push(driver)
+
+    }
     }
 
 ;

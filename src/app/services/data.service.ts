@@ -8,6 +8,7 @@ import { Drivers } from '../models/Drivers';
 })
 export class DataService {
   
+  
   drivers: Drivers[] = [
     {
       fullName: "ken block",
@@ -65,6 +66,7 @@ export class DataService {
       category: "drag",
       likeIts: 0
     },
+     
     
   ];
   cars: Car[] = [
@@ -114,14 +116,15 @@ export class DataService {
   ];
   
 
-
+  
   constructor() { }
 
    ngOnInit():void {
-   
+    
   }
   getAllCars() { 
     return this.cars;
+
     }
   getAllDrivers() { 
     return this.drivers;

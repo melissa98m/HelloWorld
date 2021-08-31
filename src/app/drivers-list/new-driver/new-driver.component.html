@@ -2,7 +2,7 @@
   Créer une voiture
 </h1>
 <div class="col-6 border shadow my-5 p-5">
-  <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+  <form (ngSubmit)="onSubmit" [formGroup]="driverForm">
 
     <div class="form-group">
       <label for="fullname">Nom du pilote</label>
@@ -36,6 +36,6 @@
 
     
 
-    <button type="submit" [disabled]="myForm.invalid" class="btn btn-success my-5">Enregister</button>
+    <button type="submit"  class="btn btn-success my-5">Enregister</button>
   </form>
 </div>

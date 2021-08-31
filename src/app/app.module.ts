@@ -2,6 +2,7 @@ import { NgModule , LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import localeFr from '@angular/common/locales/fr';
 registerLocaleData(localeFr, 'fr');
@@ -22,6 +23,7 @@ import { NewDriverComponent } from './drivers-list/new-driver/new-driver.compone
 import { RequeteComponent } from './requete/requete.component';
 
 import { DataService } from './services/data.service';
+import { DataFromApiComponent } from './data-from-api/data-from-api.component';
 
 
 
@@ -42,13 +44,15 @@ import { DataService } from './services/data.service';
     NewCarComponent,
     NewDriverComponent,
     RequeteComponent,
+    DataFromApiComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: "fr-FR"},
                 DataService,],

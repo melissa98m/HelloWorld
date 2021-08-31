@@ -22,7 +22,7 @@ export class NewDriverComponent implements OnInit {
     myForm.value['pays'],
     myForm.value['coverImage'],
     myForm.value['category'],
-    myForm.value['likeIts']
+    
     );
 
   this.data.addDriver(driver);
